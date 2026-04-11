@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting People in English - English Beyond the Classroom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+
+        /* ══════════════════════════════════════════
+           RESET & BASE
+        ══════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            background: #f7f5f0;
+            color: #1e1e1e;
+        }
+
+        /* ══════════════════════════════════════════
+           HERO  —  full-bleed, display-size text
+        ══════════════════════════════════════════ */
+        .hero {
+            background: #f7f5f0;
+            padding: 5rem 6rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: center;
+            min-height: 88vh;
+        }
+
+        .hero-text .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border: 1.5px solid #ddd;
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 5.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.08;
+            color: #1a2e45;
+            border: none;
+            margin: 0 0 1.4rem;
+        }
+
+        .hero-text h1 span {
+            color: #00b4cc;
+            font-style: italic;
+        }
+
+        .hero-text .hero-desc {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 440px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-text .authors-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: #888;
+        }
+
+        .hero-text .authors-tag strong {
+            color: #333;
+        }
+
+        .hero-image-col {
+            position: relative;
+        }
+
+        .hero-image-col img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 28px;
+            display: block;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -18px;
+            left: -20px;
+            background: #00b4cc;
+            color: #fff;
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 8px 24px rgba(0,180,204,0.35);
+            line-height: 1.4;
+        }
+
+        .hero-badge span {
+            display: block;
+            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ══════════════════════════════════════════
+           MISSION STRIP
+        ══════════════════════════════════════════ */
+        .mission-strip {
+            background: #1a2e45;
+            color: #fff;
+            padding: 4rem 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mission-strip h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #fff;
+            border: none;
+            margin: 0 0 1rem;
+        }
+
+        .mission-strip h2 em {
+            color: #00b4cc;
+            font-style: normal;
+        }
+
+        .mission-strip p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+        }
+
+        .mission-img {
+            border-radius: 20px;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.85;
+        }
+
+        /* ══════════════════════════════════════════
+           SECTION HEADER
+        ══════════════════════════════════════════ */
+        .section-header {
+            text-align: center;
+            padding: 4rem 2rem 1rem;
+        }
+
+        .section-header .overline {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #00b4cc;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: #1a2e45;
+            border: none;
+            margin: 0;
+        }
+
+        /* ══════════════════════════════════════════
+           TOPICS GRID  —  3 cards, image top
+        ══════════════════════════════════════════ */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+            max-width: 1100px;
+            margin: 2rem auto 4rem;
+            padding: 0 4rem;
+        }
+
+        .topic-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+
+        .topic-card .tc-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card .tc-img-wrap img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+            transition: transform 0.35s;
+        }
+
+        .topic-card:hover .tc-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .topic-card .tc-cat {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,180,204,0.92);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+        }
+
+        .topic-card .tc-body {
+            padding: 1.6rem 1.8rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-card .tc-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .topic-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #1a2e45;
+            margin: 0 0 0.7rem;
+        }
+
+        .topic-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.75;
+            margin: 0;
+            flex: 1;
+        }
+
+        /* ══════════════════════════════════════════
+           QUOTE SECTION
+        ══════════════════════════════════════════ */
+        .quote-section {
+            background: #f7f5f0;
+            padding: 2rem 4rem 4rem;
+        }
+
+        .quote-inner {
+            background: #1a2e45;
+            border-radius: 28px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .quote-body {
+            padding: 4rem 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quote-body .big-q {
+            font-family: 'Playfair Display', serif;
+            font-size: 7rem;
+            color: #00b4cc;
+            line-height: 0.6;
+            display: block;
+            margin-bottom: 1.2rem;
+            opacity: 0.6;
+        }
+
+        .quote-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            border: none;
+            margin: 0 0 1rem;
+            line-height: 1.25;
+        }
+
+        .quote-body .attr {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .quote-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: grayscale(20%);
+        }
+
+        /* ══════════════════════════════════════════
+           COMPARISON
+        ══════════════════════════════════════════ */
+        .comparison-section {
+            background: #fff;
+            padding: 5rem 6rem;
+        }
+
+        .comparison-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .comparison-inner > h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #1a2e45;
+            border: none;
+            text-align: center;
+            margin: 0 0 0.5rem;
+        }
+
+        .comp-sub {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.95rem;
+            margin: 0 0 3rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comp-col {
+            border-radius: 20px;
+            padding: 2.2rem 2.4rem;
+        }
+
+        .comp-col.in-person {
+            background: #e8f9fb;
+            border-top: 5px solid #00b4cc;
+        }
+
+        .comp-col.digital {
+            background: #fff3ee;
+            border-top: 5px solid #ff6b35;
+        }
+
+        .comp-col .comp-icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .comp-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1a2e45;
+            margin: 0 0 1rem;
+        }
+
+        .comp-col p {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero,
+            .mission-strip,
+            .comparison-section { padding-left: 3rem; padding-right: 3rem; }
+            .topics-grid { padding: 0 3rem; }
+            .quote-section { padding-left: 3rem; padding-right: 3rem; }
+        }
+
+        @media (max-width: 860px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 2rem; }
+            .hero-image-col img { height: 340px; }
+            .hero-badge { bottom: 10px; left: 10px; }
+            .mission-strip { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 2rem; }
+            .topics-grid { grid-template-columns: 1fr 1fr; padding: 0 2rem; }
+            .quote-inner { grid-template-columns: 1fr; }
+            .quote-img-col img { height: 260px; }
+            .comparison-section { padding: 3rem 2rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 580px) {
+            .topics-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+            .hero { padding: 2.5rem 1.2rem; }
+            .mission-strip { padding: 2.5rem 1.2rem; }
+            .quote-body { padding: 2.5rem 2rem; }
+            .quote-body h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn-english-ia.html">Learn with AI</a></li>
+                <li><a href="learn-english-abroad.html">Learn Abroad</a></li>
+                <li><a href="meeting-people-in-english.html">Meeting People</a></li>
+                <li><a href="english-part-of-your-life.html">English in Daily Life</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="erasmus.html">Erasmus</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+        <div class="hero-text">
+<h1>Meeting<br><span>People</span><br>in English</h1>
+            <p class="hero-desc">Exploring ways to practise English outside the classroom through real-life interactions — online, in person, and beyond.</p>
+            <p class="authors-tag">
+                By&nbsp;<strong>Manuel, Denis and Anmol</strong>
+            </p>
+        </div>
+        <div class="hero-image-col">
+            <img src="../img/meeting_p1_img1.jpeg" alt="Students talking and connecting">
+            <div class="hero-badge">
+                <span>3</span>
+                ways to connect
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ MISSION ═══════════════ -->
+    <section class="mission-strip">
+        <div>
+            <h2>Our <em>Mission</em></h2>
+            <p>The goal of our project is to explore <strong style="color:#fff">effective ways</strong> to practise English outside the classroom, emphasising the importance of real-life interactions for language growth and confidence.</p>
+        </div>
+        <img src="../img/meeting_p2_img1.jpeg" alt="Students collaborating in a meeting" class="mission-img">
+    </section>
+
+    <!-- ═══════════════ TOPICS ═══════════════ -->
+    <div class="section-header">
+        <span class="overline">Ways to Connect</span>
+        <h2>How to Meet People in English</h2>
+    </div>
+
+    <div class="topics-grid">
+
+        <div class="topic-card">
+            <div class="tc-img-wrap">
+                <img src="../img/meeting_p3_img1.jpeg" alt="Online English lesson">
+                <span class="tc-cat">Online</span>
+            </div>
+            <div class="tc-body">
+                <span class="tc-icon">💻</span>
+                <h3>Online English Lessons</h3>
+                <p>Joining an online English lesson via video call offers a convenient way to practise speaking with new people, despite the occasional feeling of distance in the virtual environment.</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="tc-img-wrap">
+                <img src="../img/meeting_p4_img1.jpeg" alt="Language exchange event at a rooftop">
+                <span class="tc-cat">In-Person</span>
+            </div>
+            <div class="tc-body">
+                <span class="tc-icon">🌍</span>
+                <h3>Language Exchange Event</h3>
+                <p>At the Moxy Hotel rooftop, we experienced an <strong>incredible atmosphere</strong> filled with engaging discussions, where people of all ages practised their English while forming genuine connections.</p>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="tc-img-wrap">
+                <img src="../img/meeting_p6_img1.jpeg" alt="People using social media">
+                <span class="tc-cat">Social</span>
+            </div>
+            <div class="tc-body">
+                <span class="tc-icon">📱</span>
+                <h3>Social Media Learning</h3>
+                <p>TikTok and Instagram offer an <strong>informal way</strong> to practise English, connecting learners with diverse communities — though they often lack meaningful face-to-face interactions.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ═══════════════ QUOTE ═══════════════ -->
+    <section class="quote-section">
+        <div class="quote-inner">
+            <div class="quote-body">
+                <span class="big-q">"</span>
+                <h2>The Reward<br>of Connection</h2>
+                <p class="attr">— Unknown</p>
+            </div>
+            <div class="quote-img-col">
+                <img src="../img/meeting_p5_img1.jpeg" alt="Diverse group of people connecting">
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ COMPARISON ═══════════════ -->
+    <section class="comparison-section">
+        <div class="comparison-inner">
+            <h2>Face-to-Face vs Digital</h2>
+            <p class="comp-sub">Comparing interaction methods for learning English</p>
+            <div class="comparison-grid">
+                <div class="comp-col in-person">
+                    <span class="comp-icon">🤝</span>
+                    <h3>In-Person Interaction</h3>
+                    <p>Engaging face-to-face offers <strong>immediate feedback</strong> and builds stronger connections. Real conversations foster confidence, allowing learners to practise English in a supportive environment and develop meaningful relationships.</p>
+                </div>
+                <div class="comp-col digital">
+                    <span class="comp-icon">🖥️</span>
+                    <h3>Digital Communication</h3>
+                    <p>While online tools provide accessibility and convenience, they often lack the warmth of personal interaction. Practising English through video calls may feel more distant, limiting authentic connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CANVA LINK ═══════════════ -->
+    <section style="background:#f7f5f0; text-align:center; padding: 3rem 2rem;">
+        <p style="color:#888; font-size:0.9rem; margin:0 0 1rem;">View the original presentation</p>
+        <a href="https://canva.link/i7rew9p9lstf04c" target="_blank"
+           style="display:inline-block; background:#1a2e45; color:#fff; padding:0.85rem 2rem;
+                  text-decoration:none; border-radius:50px; font-weight:700; font-size:0.95rem;
+                  transition:background 0.2s;"
+           onmouseover="this.style.background='#00b4cc'"
+           onmouseout="this.style.background='#1a2e45'">
+            View Canva Presentation →
+        </a>
+    </section>
+
+    <footer>
+        <section><p>Created by William, Ainara and Genesis</p></section>
+        <section><p>&copy; 2026 English Beyond the Classroom</p></section>
+    </footer>
+
+</body>
+</html>

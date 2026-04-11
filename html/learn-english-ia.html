@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Learn English with AI - English Beyond the Classroom</title>
+ <link rel="stylesheet" href="../css/styles.css">
+ <style>
+
+ /* ══════════════════════════════════════════
+ RESET & BASE
+ ══════════════════════════════════════════ */
+ *, *::before, *::after { box-sizing: border-box; }
+
+ body {
+ background: #f0f4f8;
+ color: #1e1e1e;
+ }
+
+ /* ══════════════════════════════════════════
+ HERO
+ ══════════════════════════════════════════ */
+ .hero {
+ background: linear-gradient(135deg, #0f2027, #1a3a5c, #2c5364);
+ padding: 5rem 6rem 4.5rem;
+ display: grid;
+ grid-template-columns: 1fr 420px;
+ gap: 3rem;
+ align-items: center;
+ min-height: 80vh;
+ position: relative;
+ overflow: hidden;
+ }
+
+ /* Decorative background */
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -120px; right: -120px;
+ width: 500px; height: 500px;
+ background: radial-gradient(circle, rgba(0,180,204,0.12) 0%, transparent 70%);
+ border-radius: 50%;
+ }
+
+ .hero-text .chip {
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ background: rgba(255,255,255,0.08);
+ border: 1px solid rgba(255,255,255,0.2);
+ border-radius: 50px;
+ padding: 0.35rem 1rem;
+ font-size: 0.78rem;
+ font-weight: 700;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+ color: rgba(255,255,255,0.7);
+ margin-bottom: 1.8rem;
+ }
+
+ .hero-text h1 {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(3rem, 5vw, 4.8rem);
+ font-weight: 800;
+ line-height: 1.08;
+ color: #fff;
+ border: none;
+ margin: 0 0 1.4rem;
+ }
+
+ .hero-text h1 span {
+ color: #00b4cc;
+ font-style: italic;
+ }
+
+ .hero-text .hero-desc {
+ font-size: 1.08rem;
+ color: rgba(255,255,255,0.68);
+ line-height: 1.85;
+ max-width: 440px;
+ margin-bottom: 2rem;
+ }
+
+ .hero-text .authors-tag {
+ font-size: 0.88rem;
+ color: rgba(255,255,255,0.45);
+ }
+
+ .hero-text .authors-tag strong {
+ color: rgba(255,255,255,0.8);
+ }
+
+ /* Right-side visual box */
+ .hero-visual {
+ background: rgba(255,255,255,0.05);
+ border: 1px solid rgba(255,255,255,0.12);
+ border-radius: 24px;
+ padding: 2.2rem;
+ backdrop-filter: blur(8px);
+ }
+
+ .hero-visual .hv-label {
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: #00b4cc;
+ margin-bottom: 1.2rem;
+ display: block;
+ }
+
+ .parts-list {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.9rem;
+ }
+
+ .parts-list li {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ background: rgba(255,255,255,0.06);
+ border-radius: 12px;
+ padding: 1rem 1.2rem;
+ color: rgba(255,255,255,0.8);
+ font-size: 0.97rem;
+ font-weight: 600;
+ transition: background 0.2s;
+ }
+
+ .parts-list li.active {
+ background: rgba(0,180,204,0.18);
+ border-left: 3px solid #00b4cc;
+ color: #fff;
+ }
+
+ .parts-list li .pl-badge {
+ margin-left: auto;
+ font-size: 0.65rem;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ padding: 0.2rem 0.6rem;
+ border-radius: 50px;
+ }
+
+ .parts-list li.active .pl-badge {
+ background: #00b4cc;
+ color: #fff;
+ }
+
+ /* ══════════════════════════════════════════
+ INTRO STRIP
+ ══════════════════════════════════════════ */
+ .intro-strip {
+ background: #fff;
+ padding: 3.5rem 6rem;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 3rem;
+ align-items: center;
+ }
+
+ .intro-strip h2 {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.8rem, 3vw, 2.4rem);
+ color: #1a2e45;
+ border: none;
+ margin: 0 0 1rem;
+ }
+
+ .intro-strip h2 em {
+ color: #00b4cc;
+ font-style: normal;
+ }
+
+ .intro-strip p {
+ font-size: 1.02rem;
+ color: #555;
+ line-height: 1.85;
+ margin: 0;
+ }
+
+ .intro-pillars {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ }
+
+ .pillar {
+ display: flex;
+ gap: 1rem;
+ align-items: flex-start;
+ padding: 1.1rem 1.3rem;
+ border-radius: 14px;
+ font-size: 0.95rem;
+ }
+
+ .pillar.listening { background: #e8f9fb; border-left: 4px solid #00b4cc; }
+
+ .pillar .p-text strong { display: block; color: #1a2e45; margin-bottom: 0.2rem; }
+ .pillar .p-text span { color: #777; font-size: 0.88rem; }
+
+ /* ══════════════════════════════════════════
+ SECTION WRAPPER
+ ══════════════════════════════════════════ */
+ .section-block {
+ padding: 5rem 6rem;
+ }
+
+ .section-block.alt {
+ background: #fff;
+ }
+
+ .section-label {
+ display: block;
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: #00b4cc;
+ margin-bottom: 0.5rem;
+ }
+
+ .section-block h2 {
+ font-family: 'Playfair Display', serif;
+ font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+ color: #1a2e45;
+ border: none;
+ margin: 0 0 0.6rem;
+ }
+
+ .section-block .section-intro {
+ font-size: 1.02rem;
+ color: #666;
+ line-height: 1.8;
+ max-width: 720px;
+ margin-bottom: 2.8rem;
+ }
+
+ /* ══════════════════════════════════════════
+ TOOLS CARDS
+ ══════════════════════════════════════════ */
+ .tools-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1.4rem;
+ margin-bottom: 3.5rem;
+ }
+
+ .tool-card {
+ background: #f0f4f8;
+ border-radius: 18px;
+ padding: 1.6rem 1.8rem;
+ transition: transform 0.25s, box-shadow 0.25s;
+ }
+
+ .tool-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+ }
+
+ .tool-card h3 {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.05rem;
+ color: #1a2e45;
+ margin: 0 0 0.5rem;
+ }
+
+ .tool-card p {
+ font-size: 0.9rem;
+ color: #666;
+ margin: 0;
+ line-height: 1.65;
+ }
+
+ /* ══════════════════════════════════════════
+ STUDY PLAN TABLE
+ ══════════════════════════════════════════ */
+ .plan-title {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.3rem;
+ color: #1a2e45;
+ margin: 0 0 1.2rem;
+ font-style: italic;
+ }
+
+ .styled-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-bottom: 3rem;
+ background: #fff;
+ border-radius: 16px;
+ overflow: hidden;
+ box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+ }
+
+ .styled-table thead tr {
+ background: #1a2e45;
+ }
+
+ .styled-table thead th {
+ padding: 1rem 1.4rem;
+ text-align: left;
+ color: rgba(255,255,255,0.85);
+ font-size: 0.82rem;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ border: none;
+ }
+
+ .styled-table tbody tr {
+ border-bottom: 1px solid #f0f4f8;
+ }
+
+ .styled-table tbody tr:last-child {
+ border-bottom: none;
+ }
+
+ .styled-table tbody tr:hover {
+ background: #f7fbfc;
+ }
+
+ .styled-table tbody td {
+ padding: 0.95rem 1.4rem;
+ font-size: 0.95rem;
+ color: #444;
+ border: none;
+ }
+
+ .styled-table tbody td:first-child {
+ font-weight: 700;
+ color: #00b4cc;
+ white-space: nowrap;
+ }
+
+ /* ══════════════════════════════════════════
+ PROMPTS
+ ══════════════════════════════════════════ */
+ .prompts-grid {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ }
+
+ .prompt-card {
+ background: #fff;
+ border-left: 4px solid #00b4cc;
+ border-radius: 0 14px 14px 0;
+ padding: 1.2rem 1.6rem;
+ display: flex;
+ gap: 1.2rem;
+ align-items: flex-start;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+ }
+
+ .prompt-card .pn {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.4rem;
+ font-weight: 800;
+ color: #00b4cc;
+ opacity: 0.5;
+ flex-shrink: 0;
+ line-height: 1.2;
+ min-width: 28px;
+ }
+
+ .prompt-card p {
+ margin: 0;
+ font-size: 0.95rem;
+ color: #444;
+ line-height: 1.7;
+ font-style: italic;
+ }
+
+
+ /* ══════════════════════════════════════════
+ RESPONSIVE
+ ══════════════════════════════════════════ */
+ @media (max-width: 1024px) {
+ .hero, .intro-strip, .section-block { padding-left: 3rem; padding-right: 3rem; }
+ }
+
+ @media (max-width: 860px) {
+ .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 2rem; }
+ .intro-strip { grid-template-columns: 1fr; padding: 3rem 2rem; }
+ .tools-grid { grid-template-columns: 1fr 1fr; }
+ .section-block { padding: 3rem 2rem; }
+ }
+
+ @media (max-width: 580px) {
+ .hero { padding: 2.5rem 1.2rem; }
+ .tools-grid { grid-template-columns: 1fr; }
+ .styled-table thead { display: none; }
+ .styled-table tbody td { display: block; padding: 0.4rem 1rem; }
+ .styled-table tbody td:first-child { padding-top: 1rem; }
+ .styled-table tbody td:last-child { padding-bottom: 1rem; }
+ }
+
+ </style>
+</head>
+<body>
+
+ <header>
+ <nav>
+ <ul>
+ <li><a href="index.html">Home</a></li>
+ <li><a href="learn-english-ia.html">Learn with AI</a></li>
+ <li><a href="learn-english-abroad.html">Learn Abroad</a></li>
+ <li><a href="meeting-people-in-english.html">Meeting People</a></li>
+ <li><a href="english-part-of-your-life.html">English in Daily Life</a></li>
+ <li><a href="certificates.html">Certificates</a></li>
+ <li><a href="erasmus.html">Erasmus</a></li>
+ </ul>
+ </nav>
+ </header>
+
+ <!-- ═══════════════ HERO ═══════════════ -->
+ <section class="hero">
+ <div class="hero-text">
+<h1>Learn English<br>with <span>AI</span></h1>
+ <p class="hero-desc">Artificial Intelligence makes English learning personal, flexible and available 24/7. No teacher needed — just you and the right tools.</p>
+ <p class="authors-tag">By&nbsp;<strong>William, Ainara and Genesis</strong></p>
+ </div>
+ <div class="hero-visual">
+ <span class="hv-label">Contents of this page</span>
+ <ul class="parts-list">
+ <li class="active">
+ Part 1 — Listening
+ <span class="pl-badge">Ready</span>
+ </li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- ═══════════════ INTRO ═══════════════ -->
+ <section class="intro-strip">
+ <div>
+ <h2>Three Skills,<br>One <em>Smart</em> Approach</h2>
+ <p>Learning English with Artificial Intelligence is a revolutionary and personalised way to improve the language. This page focuses on three key areas — Listening, Reading and Writing — each tackled with specific AI tools, strategies and ready-to-use prompts.</p>
+ </div>
+ <div class="intro-pillars">
+ <div class="pillar listening">
+ <div class="p-text">
+ <strong>Listening</strong>
+ <span>Stories, dictation, shadowing and voice conversations with AI.</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- ═══════════════ PART 1: LISTENING ═══════════════ -->
+ <section class="section-block" id="listening">
+ <span class="section-label">Part 1</span>
+ <h2>Practice Listening</h2>
+ <p class="section-intro">
+ Listening is one of the most important skills when learning English. With AI you can practise anytime, anywhere — no teacher needed. AI can speak to you, tell stories, have conversations and even test your understanding. The best part? You control the speed, the topic and the difficulty.
+ </p>
+
+ <!-- Tools -->
+ <p class="plan-title">AI Tools for Listening</p>
+ <div class="tools-grid">
+ <div class="tool-card">
+ <h3>Claude / ChatGPT</h3>
+ <p>Generate stories, conversations and dictation exercises on any topic, at any level.</p>
+ </div>
+ <div class="tool-card">
+ <h3>Speak App</h3>
+ <p>Practise real spoken English with an AI conversation partner that gives instant feedback.</p>
+ </div>
+ <div class="tool-card">
+ <h3>ELSA Speak</h3>
+ <p>AI-powered feedback on pronunciation and listening comprehension, tailored to your accent.</p>
+ </div>
+ </div>
+
+ <!-- Daily plan -->
+ <p class="plan-title">20-Minute Daily Listening Plan</p>
+ <table class="styled-table">
+ <thead>
+ <tr>
+ <th>Time</th>
+ <th>Activity</th>
+ <th>How to do it</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>5 min</td>
+ <td>AI Story</td>
+ <td>Ask AI for a short story. Listen, then answer 3 comprehension questions.</td>
+ </tr>
+ <tr>
+ <td>5 min</td>
+ <td>Dictation</td>
+ <td>AI reads a paragraph. You write what you hear.</td>
+ </tr>
+ <tr>
+ <td>5 min</td>
+ <td>Voice Conversation</td>
+ <td>Talk with AI — focus on understanding, not just answering.</td>
+ </tr>
+ <tr>
+ <td>5 min</td>
+ <td>Shadowing</td>
+ <td>AI reads sentences one by one. You repeat out loud immediately after.</td>
+ </tr>
+ </tbody>
+ </table>
+
+ <!-- Weekly progression -->
+ <p class="plan-title">Weekly Progression</p>
+ <table class="styled-table">
+ <thead>
+ <tr>
+ <th>Week</th>
+ <th>Focus</th>
+ <th>Level</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Weeks 1–2</td>
+ <td>Everyday vocabulary</td>
+ <td>Slow, neutral accent</td>
+ </tr>
+ <tr>
+ <td>Weeks 3–4</td>
+ <td>Casual conversations</td>
+ <td>Normal speed</td>
+ </tr>
+ <tr>
+ <td>Weeks 5–6</td>
+ <td>Different accents</td>
+ <td>American vs British</td>
+ </tr>
+ <tr>
+ <td>Weeks 7–8</td>
+ <td>Real content</td>
+ <td>Native speed — YouTube, podcasts</td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <!-- ═══════════════ PROMPTS ═══════════════ -->
+ <section class="section-block alt" id="prompts">
+ <span class="section-label">Ready-to-Use</span>
+ <h2>AI Prompts for Listening</h2>
+ <p class="section-intro">Copy and paste any of these prompts into Claude, ChatGPT or any AI chat to start practising right away.</p>
+
+ <div class="prompts-grid">
+ <div class="prompt-card">
+ <span class="pn">1</span>
+ <p>"Tell me a short story in simple English. Speak slowly. After finishing, ask me 3 comprehension questions."</p>
+ </div>
+ <div class="prompt-card">
+ <span class="pn">2</span>
+ <p>"Read one sentence at a time for shadowing practice. Wait for me to say 'next' before you continue."</p>
+ </div>
+ <div class="prompt-card">
+ <span class="pn">3</span>
+ <p>"Read a short paragraph for dictation. Pause between each sentence."</p>
+ </div>
+ <div class="prompt-card">
+ <span class="pn">4</span>
+ <p>"Let's have a simple conversation in English about daily life. Use basic vocabulary and correct me if I make mistakes."</p>
+ </div>
+ <div class="prompt-card">
+ <span class="pn">5</span>
+ <p>"Tell me the same story three times: once slowly, once at normal speed, once fast."</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- ═══════════════ PART 2: READING ═══════════════ -->
+ <section class="section-block alt" id="reading">
+ <span class="section-label">Part 2</span>
+ <h2>Practice Reading</h2>
+ <!-- Content to be added -->
+ </section>
+
+ <!-- ═══════════════ PART 3: WRITING ═══════════════ -->
+ <section class="section-block" id="writing">
+ <span class="section-label">Part 3</span>
+ <h2>Practice Writing</h2>
+ <!-- Content to be added -->
+ </section>
+
+ <footer>
+ <section><p>Created by William, Ainara and Genesis</p></section>
+ <section><p>&copy; 2026 English Beyond the Classroom</p></section>
+ </footer>
+
+</body>
+</html>

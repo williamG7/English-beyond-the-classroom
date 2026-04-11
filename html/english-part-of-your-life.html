@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making English Part of Your Life - English Beyond the Classroom</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+
+        /* ══════════════════════════════════════════
+           RESET & BASE
+        ══════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            background: #faf9f6;
+            color: #1e1e1e;
+        }
+
+        /* ══════════════════════════════════════════
+           HERO
+        ══════════════════════════════════════════ */
+        .hero {
+            background: #faf9f6;
+            padding: 5rem 6rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 460px;
+            gap: 3rem;
+            align-items: center;
+            min-height: 88vh;
+        }
+
+        .hero-text .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #fff;
+            border: 1.5px solid #ddd;
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.6rem);
+            font-weight: 800;
+            line-height: 1.08;
+            color: #1a2e45;
+            border: none;
+            margin: 0 0 1.4rem;
+        }
+
+        .hero-text h1 span {
+            color: #e74c3c;
+            font-style: italic;
+        }
+
+        .hero-text .hero-desc {
+            font-size: 1.08rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 440px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-text .authors-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: #888;
+        }
+
+        .hero-text .authors-tag strong {
+            color: #333;
+        }
+
+        .hero-image-col {
+            position: relative;
+        }
+
+        .hero-image-col img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 28px;
+            display: block;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -18px;
+            left: -20px;
+            background: #e74c3c;
+            color: #fff;
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 8px 24px rgba(231,76,60,0.35);
+            line-height: 1.4;
+        }
+
+        .hero-badge span {
+            display: block;
+            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ══════════════════════════════════════════
+           KEY CONCEPTS STRIP (fondo oscuro)
+        ══════════════════════════════════════════ */
+        .concept-strip {
+            background: #1a2e45;
+            color: #fff;
+            padding: 4.5rem 6rem;
+        }
+
+        .concept-strip-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .concept-strip .overline {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .concept-strip h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: #fff;
+            border: none;
+            margin: 0 0 0.8rem;
+        }
+
+        .concept-strip h2 em {
+            color: #e74c3c;
+            font-style: normal;
+        }
+
+        .concept-strip .intro-text {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.85;
+            max-width: 680px;
+            margin-bottom: 2.8rem;
+        }
+
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+        }
+
+        .pathway-card {
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+        }
+
+        .pathway-card.integrated {
+            background: rgba(231,76,60,0.15);
+            border-top: 4px solid #e74c3c;
+        }
+
+        .pathway-card.dedicated {
+            background: rgba(52,152,219,0.15);
+            border-top: 4px solid #3498db;
+        }
+
+        .pathway-card .p-icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .pathway-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #fff;
+            margin: 0 0 0.7rem;
+        }
+
+        .pathway-card p {
+            font-size: 0.97rem;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .golden-rule {
+            margin-top: 2.5rem;
+            background: rgba(255,255,255,0.06);
+            border-left: 4px solid #e74c3c;
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.8rem;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .golden-rule strong {
+            color: #e74c3c;
+        }
+
+        /* ══════════════════════════════════════════
+           SURVEY SECTION
+        ══════════════════════════════════════════ */
+        .survey-section {
+            background: #faf9f6;
+            padding: 5rem 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header .overline {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+            color: #1a2e45;
+            border: none;
+            margin: 0;
+        }
+
+        .survey-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .survey-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .survey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+
+        .survey-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .survey-card .sc-caption {
+            padding: 1.2rem 1.6rem 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .survey-card .sc-caption strong {
+            color: #1a2e45;
+            font-size: 0.95rem;
+        }
+
+        /* ══════════════════════════════════════════
+           DEDICATED STUDY
+        ══════════════════════════════════════════ */
+        .study-section {
+            background: #fff;
+            padding: 5rem 6rem;
+        }
+
+        .study-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .study-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            color: #1a2e45;
+            border: none;
+            margin: 0 0 0.4rem;
+        }
+
+        .study-left .overline {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .study-left .commitment-box {
+            background: #faf9f6;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin-top: 1.8rem;
+            border-left: 4px solid #3498db;
+        }
+
+        .study-left .commitment-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #1a2e45;
+            margin: 0 0 0.6rem;
+            font-style: italic;
+        }
+
+        .study-left .commitment-box p {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .study-right h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #1a2e45;
+            margin: 0 0 1.2rem;
+            font-style: italic;
+        }
+
+        .study-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .study-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #faf9f6;
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+        }
+
+        .study-item .si-icon {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .study-item .si-body strong {
+            display: block;
+            color: #1a2e45;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .study-item .si-body p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        /* ══════════════════════════════════════════
+           ACTION PLAN / CONCLUSION
+        ══════════════════════════════════════════ */
+        .plan-section {
+            background: #1a2e45;
+            padding: 5rem 6rem;
+        }
+
+        .plan-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .plan-inner .overline {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: #fff;
+            border: none;
+            margin: 0 0 2.5rem;
+        }
+
+        .plan-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .plan-col {
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+        }
+
+        .plan-col.weekdays {
+            background: rgba(52,152,219,0.18);
+            border-top: 4px solid #3498db;
+        }
+
+        .plan-col.weekend {
+            background: rgba(231,76,60,0.18);
+            border-top: 4px solid #e74c3c;
+        }
+
+        .plan-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 0 0 1.2rem;
+        }
+
+        .plan-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .plan-col ul li {
+            font-size: 0.97rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.65;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .plan-col ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .plan-col ul li strong {
+            color: #fff;
+        }
+
+        .plan-quote {
+            background: rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 2.5rem 3rem;
+            text-align: center;
+        }
+
+        .plan-quote .big-q {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: #e74c3c;
+            line-height: 0.5;
+            display: block;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .plan-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            color: #fff;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ══════════════════════════════════════════
+           CANVA LINK
+        ══════════════════════════════════════════ */
+        .canva-link-section {
+            background: #faf9f6;
+            text-align: center;
+            padding: 3.5rem 2rem;
+        }
+
+        .canva-link-section p {
+            color: #999;
+            font-size: 0.9rem;
+            margin: 0 0 1rem;
+        }
+
+        .canva-link-section a {
+            display: inline-block;
+            background: #1a2e45;
+            color: #fff;
+            padding: 0.85rem 2.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.22s;
+        }
+
+        .canva-link-section a:hover {
+            background: #e74c3c;
+        }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .hero, .concept-strip, .study-section, .plan-section { padding-left: 3rem; padding-right: 3rem; }
+            .survey-section { padding-left: 3rem; padding-right: 3rem; }
+        }
+
+        @media (max-width: 860px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; padding: 3rem 2rem; }
+            .hero-image-col img { height: 300px; }
+            .hero-badge { bottom: 10px; left: 10px; }
+            .concept-strip { padding: 3rem 2rem; }
+            .pathways-grid { grid-template-columns: 1fr; }
+            .survey-grid { grid-template-columns: 1fr; padding: 0; }
+            .study-section { padding: 3rem 2rem; }
+            .study-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .plan-section { padding: 3rem 2rem; }
+            .plan-cols { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 580px) {
+            .hero { padding: 2.5rem 1.2rem; }
+            .concept-strip { padding: 2.5rem 1.2rem; }
+            .survey-section { padding: 2.5rem 1.2rem; }
+            .plan-quote { padding: 2rem 1.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learn-english-ia.html">Learn with AI</a></li>
+                <li><a href="learn-english-abroad.html">Learn Abroad</a></li>
+                <li><a href="meeting-people-in-english.html">Meeting People</a></li>
+                <li><a href="english-part-of-your-life.html">English in Daily Life</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="erasmus.html">Erasmus</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+        <div class="hero-text">
+<h1>Making English<br><span>Part of</span><br>Your Life</h1>
+            <p class="hero-desc">You don't need to pause your life to learn English. Discover how to weave it naturally into your everyday routines — commuting, watching, studying — and make every moment count.</p>
+            <p class="authors-tag">
+                By&nbsp;<strong>Angel Sardinha, Iván Torres and Carlos Vargas</strong>
+            </p>
+        </div>
+        <div class="hero-image-col">
+            <img src="../img/epyl_page_1.png" alt="Making English Part of Your Life - London illustration">
+            <div class="hero-badge">
+                <span>2</span>
+                key pathways
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ KEY CONCEPTS ═══════════════ -->
+    <section class="concept-strip">
+        <div class="concept-strip-inner">
+            <span class="overline">About the Presentation</span>
+            <h2>Integrating English Without <em>Pausing Your Life</em></h2>
+            <p class="intro-text">
+                To integrate English, we don't need to put our lives on hold. There are two main pathways to making it happen — and you can use both, depending on the day.
+            </p>
+
+            <div class="pathways-grid">
+                <div class="pathway-card integrated">
+                    <span class="p-icon">🚌</span>
+                    <h3>Integrated Practice</h3>
+                    <p>Utilizing the time already built into your daily routines — commuting, cleaning, grocery shopping. No extra hours required; just shift the language.</p>
+                </div>
+                <div class="pathway-card dedicated">
+                    <span class="p-icon">📚</span>
+                    <h3>Dedicated Study</h3>
+                    <p>Setting aside exclusive, focused blocks of time during the week for grammar, vocabulary, or writing — treated with the same commitment as any other appointment.</p>
+                </div>
+            </div>
+
+            <div class="golden-rule">
+                <strong>The Golden Rule:</strong> Consistency matters more than the number of hours. A little English every day beats an intense session once a week.
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ SURVEY RESULTS ═══════════════ -->
+    <section class="survey-section">
+        <div class="section-header">
+            <span class="overline">Class Survey</span>
+            <h2>What Does Our Group Look Like?</h2>
+        </div>
+
+        <div class="survey-grid">
+            <div class="survey-card">
+                <img src="../img/epyl_page_3.png" alt="Survey: English classes and commuting time">
+                <div class="sc-caption">
+                    <strong>English classes &amp; commuting habits</strong><br>
+                    55.6% have never taken English classes. Most people (44.4%) spend 15–30 minutes commuting — perfect time for a podcast episode.
+                </div>
+            </div>
+            <div class="survey-card">
+                <img src="../img/epyl_page_4.png" alt="Survey: Screen time and writing preferences">
+                <div class="sc-caption">
+                    <strong>Screen time &amp; writing preferences</strong><br>
+                    38.9% watch 5 hours of video per week. Meanwhile 55.6% don't enjoy writing, suggesting audio and visual content as the best entry points.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ DEDICATED STUDY ═══════════════ -->
+    <section class="study-section">
+        <div class="study-inner">
+            <div class="study-left">
+                <span class="overline">Dedicated Study</span>
+                <h2>The Focus Moment</h2>
+                <div class="commitment-box">
+                    <h3>The Commitment</h3>
+                    <p>If you decide to study 20 minutes a day, or half an hour three times a week, you must respect it as if it were a medical appointment. No excuses, no postponing.</p>
+                </div>
+            </div>
+
+            <div class="study-right">
+                <h3>Strategy for the Group</h3>
+                <div class="study-items">
+                    <div class="study-item">
+                        <span class="si-icon">⏰</span>
+                        <div class="si-body">
+                            <strong>For those with 3–4 hours of free time daily</strong>
+                            <p>20 minutes of grammar or vocabulary every afternoon — short, consistent, and effective.</p>
+                        </div>
+                    </div>
+                    <div class="study-item">
+                        <span class="si-icon">📅</span>
+                        <div class="si-body">
+                            <strong>For those who only have the weekend</strong>
+                            <p>45-minute blocks on Saturday and Sunday mornings. Studying alone, as the majority prefers, keeps you focused.</p>
+                        </div>
+                    </div>
+                    <div class="study-item">
+                        <span class="si-icon">🎯</span>
+                        <div class="si-body">
+                            <strong>The key principle</strong>
+                            <p>Find your window of time and protect it every week — whatever schedule works, stick to it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ WEEKLY ACTION PLAN ═══════════════ -->
+    <section class="plan-section">
+        <div class="plan-inner">
+            <span class="overline">Conclusion</span>
+            <h2>Our Weekly Action Plan</h2>
+
+            <div class="plan-cols">
+                <div class="plan-col weekdays">
+                    <h3>Monday to Friday</h3>
+                    <ul>
+                        <li><strong>Morning:</strong> 20 minutes of a podcast on the bus or train.</li>
+                        <li><strong>Afternoon / Evening:</strong> Entertainment in the original version with subtitles — series, Twitch, YouTube.</li>
+                    </ul>
+                </div>
+                <div class="plan-col weekend">
+                    <h3>Weekend</h3>
+                    <ul>
+                        <li>30 minutes of focused study (solo) — grammar, vocabulary, or writing.</li>
+                        <li>Playing video games in English — full immersion without it feeling like studying.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="plan-quote">
+                <span class="big-q">"</span>
+                <p>Stick to your action plan.<br>Don't postpone it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CANVA LINK ═══════════════ -->
+    <section class="canva-link-section">
+        <p>View the original presentation</p>
+        <a href="https://www.canva.com" target="_blank">View Canva Presentation →</a>
+    </section>
+
+    <footer>
+        <section><p>Created by William, Ainara and Genesis</p></section>
+        <section><p>&copy; 2026 English Beyond the Classroom</p></section>
+    </footer>
+
+</body>
+</html>
