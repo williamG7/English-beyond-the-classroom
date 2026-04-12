@@ -33,7 +33,7 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #555;
+            color: #333;
             margin-bottom: 1.8rem;
         }
 
@@ -54,7 +54,7 @@
 
         .hero-text .hero-desc {
             font-size: 1.1rem;
-            color: #555;
+            color: #333;
             line-height: 1.8;
             max-width: 440px;
             margin-bottom: 2rem;
@@ -65,7 +65,7 @@
             align-items: center;
             gap: 0.6rem;
             font-size: 0.88rem;
-            color: #888;
+            color: #333;
         }
 
         .hero-text .authors-tag strong {
@@ -255,7 +255,7 @@
 
         .topic-card p {
             font-size: 0.95rem;
-            color: #666;
+            color: #444;
             line-height: 1.75;
             margin: 0;
             flex: 1;
@@ -344,7 +344,7 @@
 
         .comp-sub {
             text-align: center;
-            color: #aaa;
+            color: #666;
             font-size: 0.95rem;
             margin: 0 0 3rem;
         }
@@ -385,7 +385,7 @@
 
         .comp-col p {
             font-size: 0.97rem;
-            color: #555;
+            color: #333;
             line-height: 1.8;
             margin: 0;
         }
@@ -415,8 +415,10 @@
 
         @media (max-width: 580px) {
             .topics-grid { grid-template-columns: 1fr; padding: 0 1rem; }
-            .hero { padding: 2.5rem 1.2rem; }
+            .hero { padding: 2.5rem 1.2rem; min-height: auto; }
             .mission-strip { padding: 2.5rem 1.2rem; }
-            .quote-body { padding: 2.5rem 2rem; }
-            .quote-body h2 { font-size: 1.6rem; }
+            .quote-section { padding: 2rem 1rem 3rem; }
+            .quote-body { padding: 2rem 1.5rem; }
+            .quote-body h2 { font-size: 1.5rem; }
+            .comparison-section { padding: 2.5rem 1.2rem; }
         }

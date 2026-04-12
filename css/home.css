@@ -75,19 +75,15 @@
         .intro-band {
             background: #fff;
             padding: 3rem 6rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            flex-wrap: wrap;
+            text-align: center;
         }
 
         .intro-band p {
             font-size: 1.05rem;
-            color: #555;
+            color: #333;
             line-height: 1.85;
-            max-width: 660px;
-            margin: 0;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .intro-band .stat-group {
@@ -191,7 +187,7 @@
 
         .topic-card p {
             font-size: 0.92rem;
-            color: #777;
+            color: #444;
             line-height: 1.7;
             margin: 0 0 1.5rem;
             flex: 1;
@@ -215,13 +211,13 @@
 
         @media (max-width: 860px) {
             .cards-grid { grid-template-columns: 1fr 1fr; }
-            .intro-band { flex-direction: column; align-items: flex-start; }
         }
 
         @media (max-width: 580px) {
-            .hero { padding: 3rem 1.5rem 2.5rem; }
-            .intro-band { padding: 2rem 1.5rem; }
-            .topics-section { padding: 2rem 1.2rem 3rem; }
+            .hero { padding: 2.5rem 1.2rem 2rem; }
+            .intro-band { padding: 1.8rem 1.2rem; text-align: center; }
+            .topics-section { padding: 2rem 1rem 2.5rem; }
             .cards-grid { grid-template-columns: 1fr; }
             .intro-band .stat-group { gap: 1.5rem; }
+            .topic-card { padding: 1.6rem 1.6rem 1.8rem; }
         }

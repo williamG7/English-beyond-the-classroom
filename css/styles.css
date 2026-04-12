@@ -1,29 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-    font-family: 'Nunito', Arial, sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: #f0f8fb;
-    color: #333;
+    color: #2a2a2a;
 }
 
+/* ══════════════════════════════════════════
+   HEADER & NAVIGATION
+══════════════════════════════════════════ */
 header {
     background: #1a2e45;
     color: #fff;
-    padding: 0.9rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 16px rgba(0,0,0,0.18);
 }
 
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    min-height: 60px;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+/* Marca / logo del sitio */
+.nav-brand {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+    flex-shrink: 0;
+    letter-spacing: 0.1px;
+    padding: 0.5rem 0;
+}
+
+.nav-brand em {
+    color: #00b4cc;
+    font-style: italic;
+}
+
+/* Checkbox oculto — motor del hamburger */
+.nav-toggle-input {
+    display: none;
+}
+
+/* Botón hamburger — oculto en escritorio */
+.nav-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-toggle-label:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: rgba(255,255,255,0.88);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    transform-origin: center;
+}
+
+/* Lista de enlaces */
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 4px;
+    align-items: center;
+    gap: 2px;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
@@ -33,11 +101,13 @@ header nav ul li a {
     color: rgba(255,255,255,0.78);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.88rem;
-    padding: 7px 15px;
+    font-size: 0.85rem;
+    padding: 7px 13px;
     border-radius: 50px;
     transition: background 0.22s, color 0.22s;
     letter-spacing: 0.2px;
+    white-space: nowrap;
+    display: block;
 }
 
 header nav ul li a:hover {
@@ -45,6 +115,9 @@ header nav ul li a:hover {
     color: #00b4cc;
 }
 
+/* ══════════════════════════════════════════
+   MAIN WRAPPER (páginas sin CSS propio)
+══════════════════════════════════════════ */
 main {
     padding: 2.5rem;
     max-width: 900px;
@@ -54,6 +127,9 @@ main {
     box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
 
+/* ══════════════════════════════════════════
+   HEADINGS
+══════════════════════════════════════════ */
 h1 {
     font-family: 'Playfair Display', serif;
     color: #1b3a5c;
@@ -74,6 +150,9 @@ h3 {
     margin-top: 1.5rem;
 }
 
+/* ══════════════════════════════════════════
+   TABLAS
+══════════════════════════════════════════ */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -94,6 +173,9 @@ th {
     color: #2c3e50;
 }
 
+/* ══════════════════════════════════════════
+   PROMPT LIST
+══════════════════════════════════════════ */
 .prompt-list {
     background: #f9f9f9;
     padding: 15px;
@@ -109,6 +191,9 @@ th {
     color: #2c3e50;
 }
 
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
 footer {
     display: flex;
     justify-content: space-between;
@@ -117,7 +202,6 @@ footer {
     font-size: 0.88rem;
     background: #1a2e45;
     color: rgba(255,255,255,0.5);
-    margin-top: 0;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
@@ -133,4 +217,90 @@ footer section:first-child {
 
 footer section p {
     margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — TABLET
+══════════════════════════════════════════ */
+@media (max-width: 900px) {
+    header nav {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MÓVIL (hamburger)
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    header nav {
+        padding: 0 1rem;
+    }
+
+    /* Mostrar botón hamburger */
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    /* Hamburger → X cuando está abierto */
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+    }
+    .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Ocultar lista por defecto en móvil */
+    header nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 0 1rem;
+        gap: 2px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Mostrar lista cuando el checkbox está activado */
+    .nav-toggle-input:checked ~ ul {
+        display: flex;
+    }
+
+    header nav ul li a {
+        border-radius: 10px;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.85);
+    }
+
+    header nav ul li a:hover {
+        background: rgba(0,180,204,0.18);
+        color: #00b4cc;
+    }
+
+    /* Footer centrado en móvil */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.4rem 1.2rem;
+        gap: 0.3rem;
+    }
+
+    /* main wrapper con menos padding en móvil */
+    main {
+        margin: 1rem 0.8rem;
+        padding: 1.4rem 1.1rem;
+        border-radius: 12px;
+    }
+
+    /* Tablas desplazables en móvil */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        min-width: 100%;
+    }
 }

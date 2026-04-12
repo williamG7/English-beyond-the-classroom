@@ -33,7 +33,7 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #555;
+            color: #333;
             margin-bottom: 1.8rem;
         }
 
@@ -54,7 +54,7 @@
 
         .hero-text .hero-desc {
             font-size: 1.08rem;
-            color: #555;
+            color: #333;
             line-height: 1.8;
             max-width: 440px;
             margin-bottom: 2rem;
@@ -65,7 +65,7 @@
             align-items: center;
             gap: 0.6rem;
             font-size: 0.88rem;
-            color: #888;
+            color: #333;
         }
 
         .hero-text .authors-tag strong {
@@ -266,7 +266,7 @@
         .survey-card .sc-caption {
             padding: 1.2rem 1.6rem 1.5rem;
             font-size: 0.9rem;
-            color: #666;
+            color: #444;
             line-height: 1.6;
             border-top: 2px solid #f0f0f0;
         }
@@ -329,7 +329,7 @@
 
         .study-left .commitment-box p {
             font-size: 0.97rem;
-            color: #555;
+            color: #333;
             line-height: 1.8;
             margin: 0;
         }
@@ -372,7 +372,7 @@
 
         .study-item .si-body p {
             font-size: 0.9rem;
-            color: #666;
+            color: #444;
             margin: 0;
             line-height: 1.65;
         }
@@ -502,7 +502,7 @@
         }
 
         .canva-link-section p {
-            color: #999;
+            color: #555;
             font-size: 0.9rem;
             margin: 0 0 1rem;
         }
@@ -545,8 +545,11 @@
         }
 
         @media (max-width: 580px) {
-            .hero { padding: 2.5rem 1.2rem; }
+            .hero { padding: 2.5rem 1.2rem; min-height: auto; }
             .concept-strip { padding: 2.5rem 1.2rem; }
             .survey-section { padding: 2.5rem 1.2rem; }
-            .plan-quote { padding: 2rem 1.5rem; }
+            .study-section { padding: 2.5rem 1.2rem; }
+            .plan-section { padding: 2.5rem 1.2rem; }
+            .plan-quote { padding: 2rem 1.4rem; }
+            .canva-link-section { padding: 2.5rem 1.2rem; }
         }

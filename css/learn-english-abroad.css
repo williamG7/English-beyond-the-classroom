@@ -171,7 +171,7 @@ body {
 
 .pc-desc {
     font-size: 0.9rem;
-    color: #888;
+    color: #333;
     margin: 0 0 1.2rem;
     line-height: 1.6;
 }
@@ -188,7 +188,7 @@ body {
 
 .pc-list li {
     font-size: 0.92rem;
-    color: #555;
+    color: #333;
     line-height: 1.6;
     padding-left: 1.1rem;
     position: relative;
@@ -207,7 +207,7 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #aaa;
+    color: #666;
     padding-top: 1rem;
     border-top: 1px solid #f0f0f0;
 }
@@ -238,7 +238,7 @@ body {
 
 .section-intro {
     font-size: 1rem;
-    color: #777;
+    color: #444;
     line-height: 1.8;
     max-width: 680px;
     margin-bottom: 2rem;
@@ -281,7 +281,7 @@ body {
 
 .countries-text p {
     font-size: 1rem;
-    color: #666;
+    color: #444;
     line-height: 1.8;
     max-width: 680px;
     margin: 0;
@@ -318,7 +318,7 @@ body {
 
 .country-card ul li {
     font-size: 0.88rem;
-    color: #555;
+    color: #333;
     line-height: 1.6;
     padding-left: 1rem;
     position: relative;
@@ -389,7 +389,7 @@ body {
 }
 
 .canva-link-section p {
-    color: #999;
+    color: #555;
     font-size: 0.9rem;
     margin: 0 0 1rem;
 }
@@ -435,4 +435,7 @@ body {
     .platforms-grid { padding: 0 1.2rem; }
     .img-section, .countries-section { padding: 2.5rem 1.2rem; }
     .countries-grid { grid-template-columns: 1fr; }
+    .conclusion-section { padding: 2.5rem 1.2rem; }
+    .conclusion-inner { gap: 2rem; }
+    .canva-link-section { padding: 2.5rem 1.2rem; }
 }
