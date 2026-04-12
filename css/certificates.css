@@ -1,0 +1,619 @@
+/* ═══════════════════════════════════════════
+   certificates.css
+   Mirrors the structure of english-part-of-your-life.css
+   ═══════════════════════════════════════════ */
+
+/* ── HERO ── */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 6vw 4rem;
+    min-height: 70vh;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--color-heading, #111);
+}
+
+.hero-text h1 span {
+    color: #185FA5;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 480px;
+    margin-bottom: 1.5rem;
+}
+
+.authors-tag {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.hero-image-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image-col img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: -1rem;
+    right: 1rem;
+    background: #185FA5;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.hero-badge span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* ── OVERLINE ── */
+.overline {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #185FA5;
+    margin-bottom: 0.5rem;
+}
+
+/* ── CONCEPT STRIP (Introduction) ── */
+.concept-strip {
+    background: #f7f9fc;
+    padding: 5rem 6vw;
+}
+
+.concept-strip-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.concept-strip-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.concept-strip-inner h2 em {
+    color: #185FA5;
+    font-style: normal;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2.5rem;
+    max-width: 680px;
+}
+
+.pathways-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pathway-card {
+    padding: 1.5rem;
+    border-radius: 14px;
+    border-left: 4px solid;
+}
+
+.pathway-card.integrated {
+    background: #e6f1fb;
+    border-color: #185FA5;
+}
+
+.pathway-card.dedicated {
+    background: #e1f5ee;
+    border-color: #0F6E56;
+}
+
+.pathway-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.pathway-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.golden-rule {
+    background: #fff8e6;
+    border-left: 4px solid #EF9F27;
+    padding: 1rem 1.5rem;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.golden-rule strong {
+    color: #111;
+}
+
+/* ── MAIN CERTIFICATES ── */
+.certs-section {
+    padding: 5rem 6vw;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+}
+
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: #fff;
+    border: 1px solid #e0e8f0;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.cert-card:hover {
+    box-shadow: 0 8px 32px rgba(24, 95, 165, 0.1);
+}
+
+.cert-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0 auto 1rem;
+    color: white;
+}
+
+.cert-icon.cambridge { background: #185FA5; }
+.cert-icon.ielts     { background: #D85A30; }
+.cert-icon.toefl     { background: #0F6E56; }
+
+.cert-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #111;
+}
+
+.cert-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.cert-facts {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.cert-facts li {
+    font-size: 0.85rem;
+    color: #444;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cert-facts li::before {
+    content: "→ ";
+    color: #185FA5;
+    font-weight: 700;
+}
+
+/* ── COMPARISON TABLE ── */
+.comparison-section {
+    background: #f7f9fc;
+    padding: 5rem 6vw;
+}
+
+.comparison-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.comparison-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.comparison-table thead tr {
+    background: #185FA5;
+    color: white;
+}
+
+.comparison-table th {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid #e0e8f0;
+    transition: background 0.15s;
+}
+
+.comparison-table tbody tr:hover {
+    background: #edf4fb;
+}
+
+.comparison-table td {
+    padding: 0.9rem 1rem;
+    color: #333;
+}
+
+.comparison-table td strong {
+    color: #185FA5;
+}
+
+/* ── OPINION ── */
+.opinion-section {
+    padding: 5rem 6vw;
+}
+
+.opinion-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.opinion-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2.5rem;
+}
+
+.opinion-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.opinion-item {
+    background: #fff;
+    border: 1px solid #e0e8f0;
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.opinion-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #185FA5;
+    margin-bottom: 0.6rem;
+}
+
+.opinion-item p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ── FREE RESOURCES ── */
+.resources-section {
+    background: #f7f9fc;
+    padding: 5rem 6vw;
+}
+
+.resources-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resources-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.75rem;
+}
+
+.resources-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border: 1px solid #e0e8f0;
+}
+
+.resource-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.resource-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ── SCHOLARSHIPS ── */
+.scholarships-section {
+    padding: 5rem 6vw;
+}
+
+.scholarships-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.scholarships-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2.5rem;
+}
+
+.scholarships-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.scholarship-item {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e0e8f0;
+}
+
+.scholarship-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #185FA5;
+    margin-bottom: 0.5rem;
+}
+
+.scholarship-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ── STUDY PLAN ── */
+.plan-section {
+    background: #f7f9fc;
+    padding: 5rem 6vw;
+}
+
+.plan-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.plan-inner h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.plan-intro {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 2.5rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 48px;
+    bottom: 0;
+    width: 2px;
+    background: #c8dff5;
+}
+
+.timeline-num {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #185FA5;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-body {
+    padding-top: 0.4rem;
+}
+
+.timeline-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #185FA5;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-body p:last-child {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.plan-quote {
+    margin-top: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+    background: #185FA5;
+    color: white;
+    border-radius: 16px;
+}
+
+.big-q {
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 800;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+.plan-quote p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding-top: 0.5rem;
+}
+
+/* ── CANVA LINK ── */
+.canva-link-section {
+    text-align: center;
+    padding: 3rem 6vw;
+    background: #fff;
+    border-top: 1px solid #e8edf5;
+}
+
+.canva-link-section p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+}
+
+.canva-link-section a {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #185FA5;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.canva-link-section a:hover {
+    background: #0C447C;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 3rem 5vw;
+        min-height: auto;
+    }
+
+    .pathways-grid,
+    .certs-grid,
+    .resources-grid,
+    .scholarships-grid {
+        grid-template-columns: 1fr;
+    }
+}
