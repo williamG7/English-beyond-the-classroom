@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
 /* ══════════════════════════════════════════
  RESET & BASE
  ══════════════════════════════════════════ */
@@ -6,6 +8,7 @@
  body {
  background: #f0f4f8;
  color: #1e1e1e;
+ font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
  }
 
  /* ══════════════════════════════════════════
@@ -50,10 +53,11 @@
  }
 
  .hero-text h1 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', 'Playfair Display', sans-serif;
  font-size: clamp(3rem, 5vw, 4.8rem);
  font-weight: 800;
  line-height: 1.08;
+ letter-spacing: -0.03em;
  color: #fff;
  border: none;
  margin: 0 0 1.4rem;
@@ -162,8 +166,9 @@
  }
 
  .intro-strip h2 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', 'Playfair Display', sans-serif;
  font-size: clamp(1.8rem, 3vw, 2.4rem);
+ letter-spacing: -0.02em;
  color: #1a2e45;
  border: none;
  margin: 0 0 1rem;
@@ -226,8 +231,9 @@
  }
 
  .section-block h2 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', 'Playfair Display', sans-serif;
  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+ letter-spacing: -0.025em;
  color: #1a2e45;
  border: none;
  margin: 0 0 0.6rem;
@@ -277,9 +283,10 @@
  }
 
  .tool-card h3 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', sans-serif;
  font-size: 1.12rem;
  font-weight: 700;
+ letter-spacing: -0.01em;
  color: #0d1f33;
  margin: 0 0 0.6rem;
  }
@@ -334,9 +341,10 @@
 
  /* Título de subsección — grande y visible */
  .listen-block-header h3 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', 'Playfair Display', sans-serif;
  font-size: clamp(1.5rem, 2.4vw, 2rem);
  font-weight: 800;
+ letter-spacing: -0.02em;
  color: #0d1f33;
  margin: 0 0 0.75rem;
  line-height: 1.2;
@@ -366,6 +374,7 @@
  margin-bottom: 0;
  }
 
+
  .strategy-card {
  background: #fff;
  border-radius: 14px;
@@ -382,9 +391,10 @@
  }
 
  .strategy-card h3 {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', sans-serif;
  font-size: 1.05rem;
  font-weight: 700;
+ letter-spacing: -0.01em;
  color: #0d1f33;
  margin: 0 0 0.5rem;
  }
@@ -507,7 +517,7 @@
  }
 
  .prompt-card .pn {
- font-family: 'Playfair Display', serif;
+ font-family: 'Syne', sans-serif;
  font-size: 1.4rem;
  font-weight: 800;
  color: #00b4cc;
@@ -553,4 +563,62 @@
  .styled-table tbody td { display: block; padding: 0.4rem 1rem; }
  .styled-table tbody td:first-child { padding-top: 1rem; }
  .styled-table tbody td:last-child { padding-bottom: 1rem; }
+ }
+
+ /* ══════════════════════════════════════════
+ CORRECCIÓN: cabeceras de tabla visibles
+ La regla global th{background:#ecf0f1} de styles.css
+ tapaba el degradado del thead tr. Se fuerza transparente
+ para que el fondo del tr se muestre.
+ ══════════════════════════════════════════ */
+ .styled-table thead th {
+ background: transparent !important;
+ }
+
+ /* ══════════════════════════════════════════
+ DIFERENCIACIÓN VISUAL POR SECCIÓN
+ ══════════════════════════════════════════ */
+
+ /* ── READING — azul (#3498db) ── */
+ #reading {
+ background: #eef6ff;
+ border-top: 6px solid #3498db;
+ }
+ #reading .section-label                        { color: #3498db; }
+ #reading .lbh-tag                              { color: #3498db; background: rgba(52,152,219,0.12); }
+ #reading .strategy-card                        { border-left-color: #3498db; }
+ #reading .strategy-card:hover                  { border-left-color: #2980b9; box-shadow: 0 10px 30px rgba(52,152,219,0.15); }
+ #reading .styled-table thead tr                { background: linear-gradient(90deg, #1a3a6c, #2980b9); }
+ #reading .styled-table thead th:first-child    { color: #a8d8ff; }
+ #reading .styled-table tbody td:first-child    { color: #2980b9; }
+ #reading .styled-table tbody tr:hover          { background: #daeeff; }
+ #reading .prompt-card                          { border-left-color: #3498db; }
+ #reading .pn                                   { color: #3498db; }
+ #reading .tool-card::before                    { background: linear-gradient(90deg, #3498db, #2980b9); }
+ #reading .lb-alt                               { background: #ddeeff; border-color: rgba(52,152,219,0.2); }
+ #reading .lb-alt .listen-block-header          { border-bottom-color: rgba(52,152,219,0.2); }
+
+ /* ── WRITING — naranja (#e67e22) ── */
+ #writing {
+ background: #fff8f2;
+ border-top: 6px solid #e67e22;
+ }
+ #writing .section-label                        { color: #e67e22; }
+ #writing .lbh-tag                              { color: #c0550f; background: rgba(230,126,34,0.12); }
+ #writing .strategy-card                        { border-left-color: #e67e22; }
+ #writing .strategy-card:hover                  { border-left-color: #d35400; box-shadow: 0 10px 30px rgba(230,126,34,0.15); }
+ #writing .styled-table thead tr                { background: linear-gradient(90deg, #7d3a00, #c0392b); }
+ #writing .styled-table thead th:first-child    { color: #ffd3a8; }
+ #writing .styled-table tbody td:first-child    { color: #e67e22; }
+ #writing .styled-table tbody tr:hover          { background: #fff0e0; }
+ #writing .prompt-card                          { border-left-color: #e67e22; }
+ #writing .pn                                   { color: #e67e22; }
+ #writing .tool-card::before                    { background: linear-gradient(90deg, #e67e22, #d35400); }
+ #writing .lb-alt                               { background: #fef0e0; border-color: rgba(230,126,34,0.2); }
+ #writing .lb-alt .listen-block-header          { border-bottom-color: rgba(230,126,34,0.2); }
+
+ /* ── LISTENING — teal (#00b4cc) — ya era el acento, lo reforzamos ── */
+ #listening {
+ background: #e8f9fb;
+ border-top: 6px solid #00b4cc;
  }
