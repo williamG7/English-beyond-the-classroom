@@ -622,3 +622,53 @@
  background: #e8f9fb;
  border-top: 6px solid #00b4cc;
  }
+
+ /* ══════════════════════════════════════════
+ REAL CONTENT STRIP (Listening)
+ ══════════════════════════════════════════ */
+ .real-content-strip {
+ margin-top: 1.8rem;
+ padding-top: 1.4rem;
+ border-top: 2px dashed rgba(0,180,204,0.25);
+ }
+
+ .rc-label {
+ display: inline-block;
+ font-size: 0.68rem;
+ font-weight: 800;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: #5a6a7a;
+ margin-bottom: 1rem;
+ }
+
+ .rc-items {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 0.8rem;
+ }
+
+ .rc-item {
+ background: #f4fbfc;
+ border: 1px solid rgba(0,180,204,0.2);
+ border-radius: 10px;
+ padding: 0.9rem 1.1rem;
+ }
+
+ .rc-item strong {
+ display: block;
+ font-family: 'Syne', sans-serif;
+ font-size: 0.95rem;
+ color: #0d1f33;
+ margin-bottom: 0.25rem;
+ }
+
+ .rc-item span {
+ font-size: 0.85rem;
+ color: #5a6a7a;
+ line-height: 1.5;
+ }
+
+ @media (max-width: 580px) {
+ .rc-items { grid-template-columns: 1fr; }
+ }
